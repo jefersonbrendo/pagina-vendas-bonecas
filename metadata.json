@@ -1,0 +1,6 @@
+{
+  "name": "+300 Bonecas de Papel - Página de Vendas",
+  "description": "PDF digital com mais de 300 bonecas de papel para imprimir, recortar e montar. Brinquedo educativo e diversão garantida longe das telas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
