@@ -2,7 +2,7 @@ import { Testimonial, FaqItem, PricingPlan } from '../types';
 
 export const ASSETS = {
   heroPhoneCut: '/storage/phone_mockup_cutting_1790338619001.webp',
-  heroVideo: '/storage/video.mp4',
+  heroVideo: '/storage/mini_vsl_v2.mp4',
   heroCanvaEmbed: '',
   videoCover: '/storage/capa_video.webp',
   momAvatar: '/storage/Lucia.webp',
