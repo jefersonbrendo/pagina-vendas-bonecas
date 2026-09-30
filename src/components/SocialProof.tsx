@@ -12,12 +12,14 @@ interface SlideItem {
   photoSubtitle?: string;
 }
 
-// 5 curated slides alternating between verified mother reviews and real WhatsApp screenshots
+// Prints reais de clientes (WhatsApp e confirmações de compra)
 const SLIDES: SlideItem[] = [
   {
-    id: 't-1',
-    type: 'testimonial',
-    testimonial: TESTIMONIALS[0],
+    id: 'p-3',
+    type: 'photo',
+    photoUrl: ASSETS.prova3,
+    photoTitle: 'Compra Aprovada e Acesso Entregue',
+    photoSubtitle: 'Cliente recebeu o kit logo após o pagamento',
   },
   {
     id: 'p-1',
@@ -27,9 +29,11 @@ const SLIDES: SlideItem[] = [
     photoSubtitle: 'Depoimento espontâneo de mãe verificada',
   },
   {
-    id: 't-2',
-    type: 'testimonial',
-    testimonial: TESTIMONIALS[1],
+    id: 'p-4',
+    type: 'photo',
+    photoUrl: ASSETS.prova4,
+    photoTitle: 'Compra Confirmada no WhatsApp',
+    photoSubtitle: 'Acesso enviado na hora para a cliente',
   },
   {
     id: 'p-2',
@@ -37,11 +41,6 @@ const SLIDES: SlideItem[] = [
     photoUrl: ASSETS.prova2,
     photoTitle: 'Conversa Real no WhatsApp',
     photoSubtitle: 'Experiência compartilhada de mãe cliente',
-  },
-  {
-    id: 't-3',
-    type: 'testimonial',
-    testimonial: TESTIMONIALS[2],
   },
 ];
 

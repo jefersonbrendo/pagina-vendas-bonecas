@@ -11,6 +11,8 @@ export const ASSETS = {
   twoGirlsPlaying: '/storage/two_girls_playing_1790338677187.webp',
   prova1: '/storage/prova_social_1.webp',
   prova2: '/storage/prova_social_2_v2.webp',
+  prova3: '/storage/prova_social_3.webp',
+  prova4: '/storage/prova_social_4.webp',
   provaKid1: '/storage/prova_kid_1.webp',
   provaKid2: '/storage/prova_kid_2.webp',
   provaKid3: '/storage/prova_kid_3.webp',
