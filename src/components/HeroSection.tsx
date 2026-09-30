@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { ChevronDown, Sparkles, Play, Volume2, VolumeX } from 'lucide-react';
 import { ASSETS } from '../data/content';
+import { useDeferredMedia } from '../hooks/useDeferredMedia';
 
 interface HeroSectionProps {
   onCtaClick: () => void;
@@ -8,6 +9,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick, onScrollDown }) => {
+  const mediaReady = useDeferredMedia();
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [hasVideoError, setHasVideoError] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
@@ -118,7 +120,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick, onScrollDo
                   <video
                     ref={videoRef}
                     src={ASSETS.heroVideo}
-                    poster={ASSETS.videoCover}
+                    poster={mediaReady ? ASSETS.videoCover : undefined}
                     loop
                     muted={isMuted}
                     playsInline

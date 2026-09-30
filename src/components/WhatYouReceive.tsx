@@ -19,6 +19,7 @@ import {
   DemonstrationItem,
   ASSETS,
 } from '../data/content';
+import { useDeferredMedia } from '../hooks/useDeferredMedia';
 
 // Curated row of real children playing photos sent by customers
 const CHILD_PHOTOS = [
@@ -54,19 +55,13 @@ const CHILD_PHOTOS = [
   },
 ];
 
-// Helper to calculate responsive items per page
-const getInitialItemsPerPage = () => {
-  if (typeof window === 'undefined') return 3;
-  if (window.innerWidth < 640) return 1;
-  if (window.innerWidth < 1024) return 2;
-  return 3;
-};
 
 interface WhatYouReceiveProps {
   onCtaClick?: () => void;
 }
 
 export const WhatYouReceive: React.FC<WhatYouReceiveProps> = ({ onCtaClick }) => {
+  const mediaReady = useDeferredMedia();
   // Demonstration Sheets State - Rock-solid Transform Carousel
   const baseCount = DEMONSTRATION_ITEMS.length;
   // 5 full sets of slides (25 items) to guarantee endless buffer in both directions
@@ -78,7 +73,7 @@ export const WhatYouReceive: React.FC<WhatYouReceiveProps> = ({ onCtaClick }) =>
     ...DEMONSTRATION_ITEMS,
   ];
 
-  const [itemsPerPage, setItemsPerPage] = useState<number>(getInitialItemsPerPage);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(1); // 1 no pré-render; o efeito abaixo ajusta à largura real
   // Start right in the middle set (index 10)
   const [currentIndex, setCurrentIndex] = useState<number>(baseCount * 2);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(true);
@@ -366,7 +361,7 @@ export const WhatYouReceive: React.FC<WhatYouReceiveProps> = ({ onCtaClick }) =>
                         {/* Image Box (Uncropped full sheet) */}
                         <div className="relative h-[320px] sm:h-[350px] md:h-[370px] w-full p-3 sm:p-4 bg-gradient-to-b from-white via-pink-50/20 to-white flex items-center justify-center overflow-hidden">
                           <img
-                            src={item.image}
+                            src={mediaReady ? item.image : undefined}
                             alt={item.title}
                             width={380}
                             height={380}
@@ -539,7 +534,7 @@ export const WhatYouReceive: React.FC<WhatYouReceiveProps> = ({ onCtaClick }) =>
                   className="group/card relative w-56 sm:w-64 md:w-72 shrink-0 aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer border border-pink-100"
                 >
                   <img
-                    src={photo.url}
+                    src={mediaReady ? photo.url : undefined}
                     alt={photo.title}
                     width={288}
                     height={216}

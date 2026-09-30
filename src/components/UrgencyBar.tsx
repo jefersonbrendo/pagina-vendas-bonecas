@@ -7,16 +7,16 @@ interface UrgencyBarProps {
 
 export const UrgencyBar: React.FC<UrgencyBarProps> = ({ onCtaClick }) => {
   // 5 minutes and 47 seconds countdown default (like the user reference image)
-  const [secondsLeft, setSecondsLeft] = useState(() => {
-    const saved = localStorage.getItem('dolls_promo_timer');
-    if (saved) {
-      const parsed = parseInt(saved, 10);
-      if (!isNaN(parsed) && parsed > 0) return parsed;
-    }
-    return 347; // 05:47
-  });
+  const [secondsLeft, setSecondsLeft] = useState(347); // 05:47
 
   useEffect(() => {
+    try {
+      const parsed = parseInt(localStorage.getItem('dolls_promo_timer') || '', 10);
+      if (!isNaN(parsed) && parsed > 0) setSecondsLeft(parsed);
+    } catch {
+      // ignore
+    }
+
     const interval = setInterval(() => {
       setSecondsLeft((prev) => {
         if (prev <= 1) {

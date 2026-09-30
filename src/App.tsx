@@ -33,6 +33,8 @@ export default function App() {
   const [selectedPlan, setSelectedPlan] = useState<PricingPlan | null>(PRICING_PLANS[1]); // Default to Alegria + Bônus
 
   const scrollToPricing = () => {
+    // Renderiza as seções com content-visibility antes de calcular a posição, senão o scroll para no lugar errado
+    document.documentElement.classList.add('cv-off');
     const el = document.getElementById('ofertas') || document.getElementById('precos');
     if (el) {
       const rect = el.getBoundingClientRect();
@@ -92,19 +94,25 @@ export default function App() {
 
         {/* 3. Below-the-fold Content */}
         {/* O que você vai receber */}
-        <WhatYouReceive onCtaClick={scrollToPricing} />
+        <div className="cv-auto">
+          <WhatYouReceive onCtaClick={scrollToPricing} />
+        </div>
 
         {/* Quem eu sou */}
         <AboutCreator />
 
         {/* Prova Social: Testimonials + Quantified Mothers */}
-        <SocialProof />
+        <div className="cv-auto">
+          <SocialProof />
+        </div>
 
         {/* Seção de Pacotes / Preços */}
-        <PricingSection
-          onSelectPlan={handleSelectPlan}
-          onSelectBasic={handleRequestBasic}
-        />
+        <div className="cv-auto">
+          <PricingSection
+            onSelectPlan={handleSelectPlan}
+            onSelectBasic={handleRequestBasic}
+          />
+        </div>
 
         {/* Selo de Garantia: 7 Dias + Compra Segura */}
         <GuaranteeSection />
@@ -113,7 +121,9 @@ export default function App() {
         <CopyrightDisclaimer />
 
         {/* FAQ em formato acordeão */}
-        <FaqSection />
+        <div className="cv-auto">
+          <FaqSection />
+        </div>
 
         {/* CTA Final */}
         <FinalCta onCtaClick={scrollToPricing} />

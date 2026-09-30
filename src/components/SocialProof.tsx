@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Star, CheckCircle, HeartHandshake, X, ChevronLeft, ChevronRight, ZoomIn, MessageSquare } from 'lucide-react';
 import { TESTIMONIALS, ASSETS } from '../data/content';
+import { useDeferredMedia } from '../hooks/useDeferredMedia';
 
 interface SlideItem {
   id: string;
@@ -44,16 +45,11 @@ const SLIDES: SlideItem[] = [
   },
 ];
 
-const getInitialItemsPerPage = (): number => {
-  if (typeof window === 'undefined') return 3;
-  if (window.innerWidth < 640) return 1;
-  if (window.innerWidth < 1024) return 2;
-  return 3;
-};
 
 export const SocialProof: React.FC = () => {
+  const mediaReady = useDeferredMedia();
   const [zoomImage, setZoomImage] = useState<string | null>(null);
-  const [itemsPerPage, setItemsPerPage] = useState<number>(getInitialItemsPerPage);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(1); // 1 no pré-render; o efeito abaixo ajusta à largura real
   const [isPaused, setIsPaused] = useState<boolean>(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
@@ -282,7 +278,7 @@ export const SocialProof: React.FC = () => {
                         {/* Author Info with Round Avatar */}
                         <div className="flex items-center gap-3 pt-4 border-t border-pink-100/80">
                           <img
-                            src={slide.testimonial.avatar}
+                            src={mediaReady ? slide.testimonial.avatar : undefined}
                             alt={slide.testimonial.name}
                             width={48}
                             height={48}
@@ -330,7 +326,7 @@ export const SocialProof: React.FC = () => {
                         {/* Foto da Prova Social */}
                         <div className="relative flex-1 min-h-[260px] flex items-center justify-center overflow-hidden rounded-2xl bg-white border border-pink-100/70 p-1.5 shadow-2xs group/img">
                           <img
-                            src={slide.photoUrl}
+                            src={mediaReady ? slide.photoUrl : undefined}
                             alt={slide.photoTitle || 'Prova social real'}
                             width={260}
                             height={300}
