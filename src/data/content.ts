@@ -10,7 +10,7 @@ export const ASSETS = {
   paperDollFlatlay: '/storage/paper_doll_flatlay_1790338663775.webp',
   twoGirlsPlaying: '/storage/two_girls_playing_1790338677187.webp',
   prova1: '/storage/prova_social_1.webp',
-  prova2: '/storage/prova_social_2.webp',
+  prova2: '/storage/prova_social_2_v2.webp',
   provaKid1: '/storage/prova_kid_1.webp',
   provaKid2: '/storage/prova_kid_2.webp',
   provaKid3: '/storage/prova_kid_3.webp',
@@ -168,7 +168,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '3',
     name: 'Camila Rodrigues',
     location: 'Curitiba, PR',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&h=160&q=80',
+    avatar: '/storage/camila_rodrigues.webp',
     rating: 5,
     daughterAge: 'mãe da Clara e Laura (5 e 7 anos)',
     quote:
