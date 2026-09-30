@@ -4,7 +4,7 @@ export const ASSETS = {
   heroPhoneCut: '/storage/phone_mockup_cutting_1790338619001.webp',
   heroVideo: '/storage/mini_vsl_v2.mp4',
   heroCanvaEmbed: '',
-  videoCover: '/storage/capa_video.webp',
+  videoCover: '/storage/capa_vsl_v2.webp',
   momAvatar: '/storage/Lucia.webp',
   childCraft1: '/storage/child_playing_craft_1_1790338650695.webp',
   paperDollFlatlay: '/storage/paper_doll_flatlay_1790338663775.webp',
