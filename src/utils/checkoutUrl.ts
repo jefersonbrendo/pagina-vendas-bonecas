@@ -1,4 +1,4 @@
-import type React from 'react';
+import { useEffect, useState } from 'react';
 
 // Leva os parâmetros de rastreamento do endereço da página (utm_*, src, sck, fbclid...)
 // para o link de checkout, sem sobrescrever os que já estiverem nele (ex.: os que a UTMify adicionou).
@@ -16,7 +16,12 @@ export function withTrackingParams(checkoutUrl: string): string {
   }
 }
 
-// onClick para <a href="checkout">: completa o href na hora do clique, antes da navegação.
-export function addTrackingParamsOnClick(e: React.MouseEvent<HTMLAnchorElement>): void {
-  e.currentTarget.href = withTrackingParams(e.currentTarget.href);
+// href de checkout para links que vêm no HTML pré-renderizado: começa com a URL pura
+// (igual ao servidor) e ganha os parâmetros logo após montar.
+// Não use onClick nesses links: o React coloca um onclick vazio no elemento e o pixel da UTMify,
+// ao rastrear o Initiate Checkout, chama esse onclick em vez de abrir o checkout.
+export function useCheckoutHref(checkoutUrl: string): string {
+  const [href, setHref] = useState(checkoutUrl);
+  useEffect(() => setHref(withTrackingParams(checkoutUrl)), [checkoutUrl]);
+  return href;
 }
