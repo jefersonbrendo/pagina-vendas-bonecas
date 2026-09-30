@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Check, Lock, ShieldCheck, QrCode, CreditCard, Sparkles, Download, ArrowRight, Copy, CheckCheck } from 'lucide-react';
+import { withTrackingParams } from '../utils/checkoutUrl';
 import { PricingPlan } from '../types';
 import { PRICING_PLANS } from '../data/content';
 
@@ -39,7 +40,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (currentPlan.checkoutUrl) {
-      window.location.href = currentPlan.checkoutUrl;
+      window.location.href = withTrackingParams(currentPlan.checkoutUrl);
       return;
     }
     setIsSuccess(true);

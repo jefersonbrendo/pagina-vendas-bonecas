@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, Flame, Lock, ShieldCheck, Sparkles, Star } from 'lucide-react';
 import { PRICING_PLANS } from '../data/content';
+import { addTrackingParamsOnClick } from '../utils/checkoutUrl';
 import { PricingPlan } from '../types';
 
 interface PricingSectionProps {
@@ -188,6 +189,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan, on
             <div>
               <a
                 href={premiumPlan.checkoutUrl || "https://pay.lowify.com.br/go.php?offer=9f3a1b8f"}
+                onClick={addTrackingParamsOnClick}
                 className="w-full py-4 sm:py-4.5 px-6 rounded-2xl bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-500 hover:to-yellow-500 text-slate-950 font-black text-base sm:text-lg tracking-wide shadow-lg shadow-amber-400/40 transition-all cursor-pointer transform hover:scale-[1.02] active:scale-[0.99] flex items-center justify-center gap-2 text-center"
               >
                 <span>{premiumPlan.ctaText}</span>

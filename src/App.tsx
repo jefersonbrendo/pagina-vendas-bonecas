@@ -70,15 +70,6 @@ export default function App() {
     setIsAlegriaOfferOpen(true);
   };
 
-  const handleAcceptAlegriaOffer = (plan: PricingPlan) => {
-    setIsAlegriaOfferOpen(false);
-    window.location.href = plan?.checkoutUrl || 'https://pay.lowify.com.br/go.php?offer=1b1b44d3';
-  };
-
-  const handleContinueWithBasic = (plan: PricingPlan) => {
-    setIsAlegriaOfferOpen(false);
-    window.location.href = plan?.checkoutUrl || 'https://pay.lowify.com.br/checkout.php?product_id=Abi8Xx';
-  };
 
   return (
     <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-pink-300 selection:text-pink-900 pb-16 sm:pb-0">
@@ -141,8 +132,6 @@ export default function App() {
           <AlegriaOfferModal
             isOpen={isAlegriaOfferOpen}
             onClose={() => setIsAlegriaOfferOpen(false)}
-            onAcceptAlegria={handleAcceptAlegriaOffer}
-            onContinueBasic={handleContinueWithBasic}
           />
         )}
         {isCheckoutOpen && (
