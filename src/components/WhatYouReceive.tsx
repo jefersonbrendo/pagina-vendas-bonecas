@@ -172,7 +172,6 @@ export const WhatYouReceive: React.FC<WhatYouReceiveProps> = ({ onCtaClick }) =>
                     height={216}
                     decoding="async"
                     className="w-full h-full object-cover group-hover/card:scale-108 transition-transform duration-500 select-none"
-                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-80 group-hover/card:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3.5 text-white">
                     <span className="text-xs sm:text-sm font-bold leading-tight">{photo.title}</span>

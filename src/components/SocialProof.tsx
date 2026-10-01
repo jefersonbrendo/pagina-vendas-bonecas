@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Star, CheckCircle, X, ChevronLeft, ChevronRight, ZoomIn, MessageSquare } from 'lucide-react';
+import { Star, CheckCircle, X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { TESTIMONIALS, ASSETS } from '../data/content';
 import { useDeferredMedia } from '../hooks/useDeferredMedia';
 
@@ -310,18 +310,6 @@ export const SocialProof: React.FC = () => {
                         onClick={() => setZoomImage(slide.photoUrl || null)}
                         className="h-full min-h-[420px] relative group rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 border-2 border-pink-300 bg-gradient-to-b from-[#FFF5F8] to-white flex flex-col justify-between p-3.5 sm:p-4 cursor-pointer"
                       >
-                        {/* Header com Tag de Verificação */}
-                        <div className="flex items-center justify-between gap-1 mb-2">
-                          <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-black border border-emerald-200">
-                            <MessageSquare className="w-3 h-3 text-emerald-600 shrink-0" />
-                            <span className="truncate">{slide.photoTitle}</span>
-                          </div>
-                          <div className="flex items-center gap-1 text-[11px] font-bold text-slate-500">
-                            <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                            <span>Verificado</span>
-                          </div>
-                        </div>
-
                         {/* Foto da Prova Social */}
                         <div className="relative flex-1 min-h-[260px] flex items-center justify-center overflow-hidden rounded-2xl bg-white border border-pink-100/70 p-1.5 shadow-2xs group/img">
                           <img
@@ -330,7 +318,6 @@ export const SocialProof: React.FC = () => {
                             width={260}
                             height={300}
                             className="max-h-[300px] w-auto max-w-full object-contain rounded-xl group-hover/img:scale-[1.03] transition-transform duration-300"
-                            loading="lazy"
                             decoding="async"
                           />
                           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-2xs rounded-xl">
