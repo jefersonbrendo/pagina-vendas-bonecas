@@ -213,13 +213,6 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Suporte prioritário via WhatsApp',
       'Acesso vitalício ilimitado',
     ],
-    exclusiveBonuses: [
-      '100 Cenários temáticos para historinhas',
-      '500 Pets fofos de papel',
-      '60 Acessórios e sapatinhos para bonecas',
-      '120 Casinhas e cômodos de bonecas',
-      'Atualizações mensais com novos temas',
-    ],
     ctaText: 'QUERO O PACOTE COMPLETO',
     checkoutUrl: 'https://pay.lowify.com.br/go.php?offer=9f3a1b8f',
   },
@@ -241,16 +234,31 @@ export const ALEGRIA_SPECIAL_OFFER: PricingPlan = {
     'Suporte prioritário via WhatsApp',
     'Acesso vitalício ilimitado',
   ],
-  exclusiveBonuses: [
-    '100 Cenários temáticos para historinhas',
-    '500 Pets fofos de papel',
-    '60 Acessórios e sapatinhos para bonecas',
-    '120 Casinhas e cômodos de bonecas',
-    'Atualizações mensais com novos temas',
-  ],
   ctaText: 'SIM! QUERO O PACOTE ALEGRIA POR R$ 16,90',
   checkoutUrl: 'https://pay.lowify.com.br/go.php?offer=1b1b44d3',
 };
+
+// Bônus que vêm no Pacote Alegria (mesmos kits da área VIP)
+export const ALEGRIA_BONUSES = [
+  {
+    id: 'bonus-pets',
+    title: 'Pets',
+    image: '/storage/bonus_pets.webp',
+    description: 'Cachorrinhos, gatinhos e bichinhos fofos, com caminhas, potinhos e laços para as bonecas cuidarem.',
+  },
+  {
+    id: 'bonus-acessorios',
+    title: 'Acessórios',
+    image: '/storage/bonus_acessorios.webp',
+    description: 'Bolsas, óculos, tiaras, laços, sapatos, bijuterias e maquiagens para completar cada look.',
+  },
+  {
+    id: 'bonus-realistas',
+    title: 'Realistas',
+    image: '/storage/bonus_realistas.webp',
+    description: 'Bonecas com traços realistas, olhos expressivos, cabelos detalhados e roupinhas em alta definição.',
+  },
+];
 
 export const FAQS: FaqItem[] = [
   {

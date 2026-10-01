@@ -9,6 +9,7 @@ import { HeroSection } from './components/HeroSection';
 import { WhatYouReceive } from './components/WhatYouReceive';
 import { WhoIsItFor } from './components/WhoIsItFor';
 import { SocialProof } from './components/SocialProof';
+import { BonusSection } from './components/BonusSection';
 import { PricingSection } from './components/PricingSection';
 import { GuaranteeSection } from './components/GuaranteeSection';
 import { CopyrightDisclaimer } from './components/CopyrightDisclaimer';
@@ -95,6 +96,9 @@ export default function App() {
         <div className="cv-auto">
           <SocialProof />
         </div>
+
+        {/* Bônus do Pacote Alegria */}
+        <BonusSection />
 
         {/* Seção de Pacotes / Preços */}
         <div className="cv-auto">

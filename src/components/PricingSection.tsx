@@ -96,24 +96,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan, on
                 ))}
               </ul>
 
-              {/* Distinct Box for Exclusive Bonuses */}
-              <div className="my-4 p-4 rounded-2xl bg-gradient-to-br from-purple-50 via-pink-50 to-amber-50 border-2 border-purple-200/80">
-                <div className="flex items-center gap-1.5 mb-2.5 text-purple-900 font-black text-xs uppercase tracking-wide">
-                  <Sparkles className="w-4 h-4 text-amber-500 fill-amber-400" />
-                  <span>BÔNUS EXCLUSIVOS PREMIUM:</span>
-                </div>
-                <ul className="space-y-2">
-                  {premiumPlan.exclusiveBonuses?.map((bonus, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-[12px] sm:text-xs font-extrabold text-purple-950">
-                      <div className="w-4 h-4 rounded-full bg-purple-200 flex items-center justify-center shrink-0 mt-0.5 text-purple-800">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      </div>
-                      <span>{bonus}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               {/* Badge: Mais de 80% escolhem esta opção */}
               <div className="text-center mb-3">
                 <span className="inline-block text-[11px] font-black text-pink-700 bg-pink-100 px-3 py-1 rounded-full">
