@@ -75,10 +75,6 @@ export const WhatYouReceive: React.FC<WhatYouReceiveProps> = ({ onCtaClick }) =>
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 mb-3 rounded-full bg-pink-50 border border-pink-100 text-pink-700 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-xs">
-            <Sparkles className="w-4 h-4 text-pink-500" />
-            <span>Material Completo em PDF</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             O QUE VOCÊ VAI RECEBER?
           </h2>
