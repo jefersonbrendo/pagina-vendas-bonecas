@@ -177,7 +177,7 @@ export const WhatYouReceive: React.FC<WhatYouReceiveProps> = ({ onCtaClick }) =>
                     <span className="text-xs sm:text-sm font-bold leading-tight">{photo.title}</span>
                     <span className="text-[11px] text-pink-200 mt-0.5 line-clamp-1">{photo.caption}</span>
                   </div>
-                  <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-slate-700 opacity-0 group-hover/card:opacity-100 transition-opacity shadow-sm">
+                  <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center text-slate-700 opacity-0 group-hover/card:opacity-100 transition-opacity shadow-sm">
                     <Eye className="w-3.5 h-3.5" />
                   </div>
                 </div>

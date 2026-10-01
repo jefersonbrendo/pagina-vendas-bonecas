@@ -320,7 +320,7 @@ export const SocialProof: React.FC = () => {
                             className="max-h-[300px] w-auto max-w-full object-contain rounded-xl group-hover/img:scale-[1.03] transition-transform duration-300"
                             decoding="async"
                           />
-                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-2xs rounded-xl">
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center rounded-xl">
                             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/85 text-white text-xs font-bold shadow-lg">
                               <ZoomIn className="w-3.5 h-3.5" />
                               Clique para ampliar
@@ -356,7 +356,7 @@ export const SocialProof: React.FC = () => {
                 className="p-2 flex items-center justify-center cursor-pointer min-w-[36px] min-h-[36px]"
               >
                 <span
-                  className={`transition-all duration-300 rounded-full h-2.5 ${
+                  className={`transition-colors duration-300 rounded-full h-2.5 ${
                     activeDotIndex === dotIdx
                       ? 'w-8 bg-pink-500'
                       : 'w-2.5 bg-pink-200 hover:bg-pink-300'

@@ -85,17 +85,13 @@ export default function App() {
 
         {/* 3. Below-the-fold Content */}
         {/* O que você vai receber */}
-        <div className="cv-auto">
-          <WhatYouReceive onCtaClick={scrollToPricing} />
-        </div>
+        <WhatYouReceive onCtaClick={scrollToPricing} />
 
         {/* Para quem é */}
         <WhoIsItFor onCtaClick={scrollToPricing} />
 
         {/* Prova Social: Testimonials + Quantified Mothers */}
-        <div className="cv-auto">
-          <SocialProof />
-        </div>
+        <SocialProof />
 
         {/* Bônus do Pacote Alegria */}
         <BonusSection />
