@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Star, CheckCircle, HeartHandshake, X, ChevronLeft, ChevronRight, ZoomIn, MessageSquare } from 'lucide-react';
+import { Star, CheckCircle, X, ChevronLeft, ChevronRight, ZoomIn, MessageSquare } from 'lucide-react';
 import { TESTIMONIALS, ASSETS } from '../data/content';
 import { useDeferredMedia } from '../hooks/useDeferredMedia';
 
@@ -380,11 +380,6 @@ export const SocialProof: React.FC = () => {
           </div>
         </div>
 
-        {/* Extra trust ribbon */}
-        <div className="mt-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 border border-pink-200/60 text-xs sm:text-sm text-pink-800 font-semibold">
-          <HeartHandshake className="w-4 h-4 text-pink-600" />
-          <span>Comunidade com 99,4% de aprovação entre mães e educadoras</span>
-        </div>
       </div>
 
       {/* Modal de Zoom da Foto */}
