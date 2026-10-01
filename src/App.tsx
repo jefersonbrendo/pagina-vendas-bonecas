@@ -74,7 +74,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-pink-300 selection:text-pink-900">
       {/* 1. Urgency Bar on Top */}
-      <UrgencyBar onCtaClick={scrollToPricing} />
+      <UrgencyBar />
 
       <main className="flex-1">
         {/* 2. Critical Hero Section (Immediate Render for FCP & LCP) */}

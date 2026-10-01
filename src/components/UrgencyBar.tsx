@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CalendarDays, Flame } from 'lucide-react';
 
-interface UrgencyBarProps {
-  onCtaClick?: () => void;
-}
-
 // Data de hoje no horário de Brasília, ex.: "30/09/2026"
 const formatToday = () =>
   new Intl.DateTimeFormat('pt-BR', {
@@ -14,7 +10,7 @@ const formatToday = () =>
     year: 'numeric',
   }).format(new Date());
 
-export const UrgencyBar: React.FC<UrgencyBarProps> = ({ onCtaClick }) => {
+export const UrgencyBar: React.FC = () => {
   // Começa vazio também no navegador, para bater com o HTML pré-renderizado (a data do build já estaria velha);
   // o efeito preenche com a data do dia e atualiza se a página ficar aberta na virada do dia.
   const [today, setToday] = useState<string | null>(null);
@@ -38,16 +34,6 @@ export const UrgencyBar: React.FC<UrgencyBarProps> = ({ onCtaClick }) => {
           {/* Placeholder invisível do mesmo tamanho até a data ser calculada, para a barra não mudar de largura */}
           <span className={`tabular-nums ${today ? '' : 'invisible'}`}>{today ?? '00/00/0000'}</span>
         </div>
-        {onCtaClick && (
-          <button
-            type="button"
-            onClick={onCtaClick}
-            aria-label="Aproveitar oferta promocional das bonecas de papel"
-            className="hidden sm:inline-flex items-center text-xs underline font-semibold text-white hover:text-pink-100 ml-2 cursor-pointer"
-          >
-            Aproveitar oferta &rarr;
-          </button>
-        )}
       </div>
     </div>
   );
