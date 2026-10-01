@@ -238,8 +238,8 @@ export const ALEGRIA_SPECIAL_OFFER: PricingPlan = {
   checkoutUrl: 'https://pay.lowify.com.br/go.php?offer=1b1b44d3',
 };
 
-// Bônus que vêm no Pacote Alegria (mesmos kits da área VIP)
-export const ALEGRIA_BONUSES = [
+// Bônus que vêm em todos os pacotes (mesmos kits da área VIP)
+export const BONUSES = [
   {
     id: 'bonus-pets',
     title: 'Pets',
