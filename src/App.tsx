@@ -7,7 +7,7 @@ import React, { useState, lazy, Suspense } from 'react';
 import { UrgencyBar } from './components/UrgencyBar';
 import { HeroSection } from './components/HeroSection';
 import { WhatYouReceive } from './components/WhatYouReceive';
-import { AboutCreator } from './components/AboutCreator';
+import { WhoIsItFor } from './components/WhoIsItFor';
 import { SocialProof } from './components/SocialProof';
 import { PricingSection } from './components/PricingSection';
 import { GuaranteeSection } from './components/GuaranteeSection';
@@ -15,7 +15,6 @@ import { CopyrightDisclaimer } from './components/CopyrightDisclaimer';
 import { FaqSection } from './components/FaqSection';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
-import { StickyBottomCta } from './components/StickyBottomCta';
 import { PricingPlan } from './types';
 import { PRICING_PLANS } from './data/content';
 
@@ -30,7 +29,7 @@ const AlegriaOfferModal = lazy(() =>
 export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isAlegriaOfferOpen, setIsAlegriaOfferOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState<PricingPlan | null>(PRICING_PLANS[1]); // Default to Alegria + Bônus
+  const [selectedPlan, setSelectedPlan] = useState<PricingPlan | null>(PRICING_PLANS[1]); // Default to Alegria
 
   const scrollToPricing = () => {
     // Renderiza as seções com content-visibility antes de calcular a posição, senão o scroll para no lugar errado
@@ -72,7 +71,7 @@ export default function App() {
 
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-pink-300 selection:text-pink-900 pb-16 sm:pb-0">
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-pink-300 selection:text-pink-900">
       {/* 1. Urgency Bar on Top */}
       <UrgencyBar onCtaClick={scrollToPricing} />
 
@@ -89,8 +88,8 @@ export default function App() {
           <WhatYouReceive onCtaClick={scrollToPricing} />
         </div>
 
-        {/* Quem eu sou */}
-        <AboutCreator />
+        {/* Para quem é */}
+        <WhoIsItFor onCtaClick={scrollToPricing} />
 
         {/* Prova Social: Testimonials + Quantified Mothers */}
         <div className="cv-auto">
@@ -122,8 +121,6 @@ export default function App() {
         {/* Rodapé simples com direitos autorais */}
         <Footer />
 
-        {/* Sticky Bottom Bar on Mobile */}
-        <StickyBottomCta onCtaClick={scrollToPricing} />
       </main>
 
       {/* Lazy Modals loaded on-demand */}

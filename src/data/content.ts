@@ -40,8 +40,8 @@ export const WHAT_YOU_RECEIVE_ITEMS = [
   },
   {
     id: '3',
-    title: 'Arquivos em PDF prontos para imprimir',
-    subtitle: 'Formato A4 padrão para impressora doméstica ou gráfica rápida',
+    title: 'Acesso digital',
+    subtitle: 'Pelo celular ou tablet, a qualquer hora.',
     iconColor: 'bg-pink-100 text-pink-600',
   },
   {
@@ -199,7 +199,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     id: 'premium',
-    name: 'PACOTE ALEGRIA + BÔNUS',
+    name: 'PACOTE ALEGRIA',
     popular: true,
     originalPrice: 119.9,
     price: 24.9,
@@ -227,7 +227,7 @@ export const PRICING_PLANS: PricingPlan[] = [
 
 export const ALEGRIA_SPECIAL_OFFER: PricingPlan = {
   id: 'alegria_special',
-  name: 'PACOTE ALEGRIA + BÔNUS (OFERTA EXCLUSIVA)',
+  name: 'PACOTE ALEGRIA (OFERTA EXCLUSIVA)',
   popular: true,
   originalPrice: 24.9,
   price: 16.9,
@@ -254,6 +254,12 @@ export const ALEGRIA_SPECIAL_OFFER: PricingPlan = {
 
 export const FAQS: FaqItem[] = [
   {
+    id: 'faq-receive',
+    question: 'Como vou receber o material?',
+    answer:
+      'O envio é 100% digital e imediato! Logo após a confirmação do pagamento (no Pix ou Cartão a liberação é instantânea), você recebe um e-mail com o acesso a todos os arquivos em PDF prontos para imprimir. Você pode baixar direto no seu celular, tablet ou computador e imprimir na sua impressora comum ou papelaria quantas vezes quiser.',
+  },
+  {
     id: 'faq-1',
     question: 'Para quem é indicado?',
     answer:
@@ -270,12 +276,6 @@ export const FAQS: FaqItem[] = [
     question: 'E se eu não gostar, posso pedir reembolso?',
     answer:
       'Com certeza! Confiamos tanto na qualidade do nosso material que oferecemos Garantia Incondicional de 7 Dias. Se por qualquer motivo você ou sua filha não amarem as bonecas, basta mandar um único e-mail ou mensagem no WhatsApp que estornamos 100% do seu valor.',
-  },
-  {
-    id: 'faq-4',
-    question: 'Como recebo o material após a compra?',
-    answer:
-      'Assim que o pagamento for aprovado (no Pix é em menos de 1 minuto; no cartão é instantâneo), você recebe um e-mail com os links para download direto. Além disso, terá acesso à área de membros vitalícia para baixar quando precisar.',
   },
   {
     id: 'faq-5',

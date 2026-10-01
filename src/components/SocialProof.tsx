@@ -204,7 +204,7 @@ export const SocialProof: React.FC = () => {
           <span className="hidden sm:inline text-amber-300 text-xs">•</span>
 
           <div className="text-xs sm:text-sm text-slate-700 font-medium text-center leading-tight">
-            <span className="text-slate-900 font-extrabold">Mais de 9.435</span>{' '}
+            <span className="text-slate-900 font-extrabold">Mais de 1.054</span>{' '}
             <span className="text-slate-600">mães já baixaram e aprovaram</span>
           </div>
         </div>

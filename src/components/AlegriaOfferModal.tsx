@@ -56,7 +56,7 @@ export const AlegriaOfferModal: React.FC<AlegriaOfferModalProps> = ({
           <div className="bg-gradient-to-br from-amber-50 via-pink-50 to-purple-50 p-4 sm:p-5 rounded-2xl border-2 border-amber-300 relative">
             <div className="text-center">
               <span className="text-[11px] font-black uppercase tracking-wider text-purple-900 bg-purple-100 px-3 py-1 rounded-full">
-                👑 PACOTE ALEGRIA + BÔNUS
+                👑 PACOTE ALEGRIA
               </span>
 
               <div className="mt-3">
