@@ -124,10 +124,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan, on
           <div className="bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl border border-white/60 flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1">
             <div>
               <div className="text-center pb-4 border-b border-slate-100">
-                <span className="text-xs font-black tracking-wider uppercase text-slate-400">
-                  Opção Essencial
-                </span>
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900">
                   {basicPlan.name}
                 </h3>
                 
