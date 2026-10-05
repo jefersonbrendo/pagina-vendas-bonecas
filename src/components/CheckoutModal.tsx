@@ -143,7 +143,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                       <span className="text-xs font-black text-slate-800">Básico</span>
                       <span className="text-xs font-black text-slate-900">R$ 9,90</span>
                     </div>
-                    <span className="text-[10px] text-slate-500 block mt-0.5">+200 Bonecas</span>
+                    <span className="text-[10px] text-slate-500 block mt-0.5">+300 Bonecas</span>
                   </button>
 
                   <button

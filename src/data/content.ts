@@ -188,7 +188,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     price: 9.9,
     discountPercentage: 78,
     features: [
-      '+200 Bonecas de papel criativas!',
+      '+300 Bonecas de papel criativas!',
       'Guia de boas-vindas com método de uso',
       'Recebimento imediato pelo e-mail',
       'Suporte via WhatsApp',
